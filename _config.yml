@@ -1,0 +1,35 @@
+title: Visit Irad
+tagline: The land under the Pole Star
+description: Plan a trip to Irad. Talas and its Old City, the pilgrim city of Iyık Janyl, Silk Road ruins, horse country, entry rules, getting there overland and money.
+url: https://visitirad.com
+baseurl: ""
+lang: en
+locale: en_GB
+logo: /assets/logo-512.png
+
+plugins:
+  - jekyll-seo-tag
+  - jekyll-sitemap
+  - jekyll-feed
+
+feed:
+  path: notes/feed.xml
+permalink: /notes/:year/:month/:title/
+
+defaults:
+  - scope:
+      path: ""
+    values:
+      layout: default
+      image: /assets/hero.jpg
+  - scope:
+      path: ""
+      type: posts
+    values:
+      layout: note
+      parent:
+        title: Travel notes
+        url: /notes/
+
+exclude:
+  - README.md

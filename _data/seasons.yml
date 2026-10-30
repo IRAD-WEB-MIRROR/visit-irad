@@ -1,0 +1,82 @@
+# "In season now" on the home page. assets/live.js shows the items whose months include the current
+# month in Irad Time (1 = January), so the box changes by itself. Keep two or more items for every month.
+- title: "Yuhanna Tünü bonfires"
+  months: [6]
+  text: "On the night of 23 to 24 June, bonfires burn on every riverbank and ridge. Jump the fire seven times for luck."
+  url: /whats-on/
+- title: "Iradi Dress Day"
+  months: [2]
+  text: "On 18 February Talas puts on its kalpaks and chapans, and riders come into the market towns."
+  url: /whats-on/
+- title: "Kymyz on the pastures"
+  months: [5, 6, 7, 8, 9]
+  text: "Fermented mare's milk, fresh from the herding camps and in Ak Bee bottles in the shops. Drink it slowly the first time."
+  url: /food/
+- title: "Yurts on the high pastures"
+  months: [6, 7, 8, 9]
+  text: "The herds are up in the mountains and the families with them. Yurt stays run until the Feast of the Cross on 14 September."
+  url: /stay/
+- title: "Apricots"
+  months: [7]
+  text: "July is apricot month in the Fergana Rim and the Toktogul orchards. Buy them by the bucket, and dried ones to take home."
+  url: /places/fergana-rim/
+- title: "Cherries and the first melons"
+  months: [6, 7]
+  text: "Early summer fruit piles up in Bazar-i Kalan: cherries in June, the first melons from the Chu plain in July."
+  url: /food/
+- title: "The pilgrim season"
+  months: [8, 9]
+  text: "Mounted pilgrims ride to Iyık Janyl for the Feast of St. Janyl on 24 August, and the guesthouses below Cathedral Hill fill up."
+  url: /whats-on/feast-of-st-janyl/
+- title: "Horse fairs and races"
+  months: [9]
+  text: "The Kyzyl-Adyr horse fair and the horse games at Semiz make September the month for anyone who loves horses."
+  url: /places/lower-talas/
+- title: "The walnut harvest"
+  months: [9, 10]
+  text: "The new crop comes down from the hill orchards to the walnut bazaar at Bazar-Korgon. Your fingers will be brown for a week."
+  url: /places/fergana-rim/
+- title: "Apples in the Chu valley"
+  months: [9, 10]
+  text: "This year's glut has apples at 3 som a kilo. Nurzhan's markets are full of them."
+  url: /places/nurzhan/
+- title: "Sea-buckthorn and barberries"
+  months: [10]
+  text: "Orange sea-buckthorn is picked along the rivers, and barberries for plov are dried on every balcony."
+  url: /food/
+- title: "First snow on the passes"
+  months: [10, 11]
+  text: "The Talas Alatau turns white and the herds come down to the valleys. Check the passes before you drive south."
+  url: /roads/
+- title: "Remembering the dead"
+  months: [11]
+  text: "Marigolds in Semiz cemetery for the Day of the Dead, and the reading of the names on 14 November."
+  url: /whats-on/semiz/
+- title: "Clear, cold days in the valleys"
+  months: [12, 1, 2]
+  text: "Bright blue skies and frozen nights. Smog can settle over Talas and Nurzhan when the air is still, so head for the hills on those days."
+  url: /weather/
+- title: "Winter convoys over Ala-Bel"
+  months: [12, 1, 2, 3]
+  text: "The Fergana Gateway runs in convoys behind the ploughs and shuts on about 20 days a winter. Iradiya's flight to Tash-Kömür is the way round."
+  url: /roads/
+- title: "Advent and Epiphany"
+  months: [12, 1]
+  text: "Subara, the Syro-Iradi Advent, leads to Christmas, and on 6 January the priests bless the rivers."
+  url: /whats-on/
+- title: "The Great Fast"
+  months: [2, 3]
+  text: "Seven weeks of fasting before Easter. The wooden nakus opens the fast at the cathedral, and many canteens add meatless dishes."
+  url: /whats-on/
+- title: "Irad Day and Nooruz"
+  months: [3]
+  text: "Parades and the President's Cup on 11 March, then the spring equinox feasts of Nooruz on 21 March."
+  url: /whats-on/irad-day/
+- title: "Blossom in the orchards"
+  months: [4]
+  text: "Apricot and apple blossom along the Talas and in the Fergana Rim, the greenest weeks of the year."
+  url: /when-to-go/
+- title: "Spring horse blessings"
+  months: [4, 5]
+  text: "St. Gewargis on 23 April, then the migration blessing as families take their herds up to the summer pastures."
+  url: /whats-on/

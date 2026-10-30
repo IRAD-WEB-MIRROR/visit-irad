@@ -1,0 +1,32 @@
+---
+title: "Travel notes from Irad: news and stories"
+heading: Travel notes
+kicker: News and stories from our member guesthouses
+lede: Seasons, roads, festivals and the families who put you up. A couple of new notes every month.
+description: "Travel notes from Irad: seasonal news, road and festival updates, and stories from guesthouse families in Talas, Iyık Janyl and the valleys."
+hero: /assets/heroes/notes.jpg
+hero_alt: "A guesthouse owner writing in a notebook at a small table in her courtyard, seen through a doorway"
+credit: "Writing up the week, Old City of Talas."
+image: /assets/heroes/notes.jpg
+credit: "The Old City of Talas."
+---
+<section>
+  <div class="container">
+    <p class="intro">New notes go up once or twice a month, and there is a feed you can follow in any reader.</p>
+
+    <div class="grid">
+      {% for post in site.posts %}
+      <article class="card card-link note-card">
+        <img src="{{ post.image | default: post.hero | relative_url }}" alt="{{ post.hero_alt | default: post.heading | escape }}" loading="lazy" width="1600" height="900">
+        <div class="where">{{ post.date | date: "%-d %B %Y" }}</div>
+        <h3><a href="{{ post.url | relative_url }}">{{ post.heading | default: post.title }}</a></h3>
+        <p>{{ post.description }}</p>
+      </article>
+      {% endfor %}
+    </div>
+
+    <p>Subscribe to <a href="{{ '/notes/feed.xml' | relative_url }}">the Travel notes feed</a> in any feed reader.</p>
+
+    {% include next-steps.html %}
+  </div>
+</section>

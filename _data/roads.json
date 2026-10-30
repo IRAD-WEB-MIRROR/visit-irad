@@ -1,0 +1,43 @@
+{
+  "updated": "2026-10-26",
+  "next": "2026-11-02",
+  "weather": "Frost and ice on the passes in the mornings. No heavy snow forecast.",
+  "routes": [
+    {
+      "id": "otmek",
+      "name": "Otmek tunnel",
+      "road": "State Route 1, km 87",
+      "height": "about 3,150 m",
+      "status": "open",
+      "label": "Open",
+      "note": "Open all year. Dangerous goods only from 22:00 to 05:00. The old pass road above the tunnel: closed for the season."
+    },
+    {
+      "id": "alabel",
+      "name": "Fergana Gateway (Ala-Bel pass)",
+      "road": "State Route 1, km 118",
+      "height": "3,184 m",
+      "status": "ice",
+      "label": "Ice: drive with care",
+      "note": "Low −8°C. Cross after 10:00 if you can."
+    },
+    {
+      "id": "kokbel",
+      "name": "Kök-Bel road",
+      "road": "Talas to Nurzhan",
+      "height": "about 2,670 m",
+      "status": "open",
+      "label": "Open",
+      "note": "Low −5°C. About 28 km cross tribal pasture: give way to herds."
+    },
+    {
+      "id": "qarachik",
+      "name": "Qara-Chik crossing",
+      "road": "Kara-Buura valley, 15 km south of Kyzyl-Adyr",
+      "height": "1,220 m",
+      "status": "open",
+      "label": "Open",
+      "note": "Open to travellers with an ISEZ exit registration and an invitation from the clan council. The pass road beyond it to the Chatkal valley: ice: drive with care."
+    }
+  ]
+}

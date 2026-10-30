@@ -1,0 +1,54 @@
+<!doctype html>
+<html lang="{{ site.lang }}">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+{% seo %}
+  {% feed_meta %}
+<meta name="theme-color" content="#6e1320">
+<link rel="icon" href="{{ '/assets/logo.svg' | relative_url }}" type="image/svg+xml">
+<link rel="icon" href="{{ '/assets/favicon-32.png' | relative_url }}" sizes="32x32" type="image/png">
+<link rel="apple-touch-icon" href="{{ '/assets/apple-touch-icon.png' | relative_url }}">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@500;700&family=Source+Sans+3:ital,wght@0,400;0,600;0,700;1,400&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="{{ '/style.css' | relative_url }}">
+{% if page.hero %}<link rel="preload" as="image" href="{{ page.hero | relative_url }}" fetchpriority="high">{% endif %}
+{% include schema.html %}
+<script>window.goatcounter=new Object();goatcounter.path=p=>location.host+p;</script>
+<script data-goatcounter="https://irad.goatcounter.com/count" async src="//gc.zgo.at/count.js"></script>
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-S14DNSLVF7"></script>
+<script>window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments);}gtag("js",new Date());gtag("config","G-S14DNSLVF7");</script>
+</head>
+<body>
+
+{% include header.html %}
+
+<main id="top">
+{% if page.hero %}
+<div class="hero{% unless page.home %} hero--page{% endunless %}">
+  <img class="hero-img" src="{{ page.hero | relative_url }}" alt="{{ page.hero_alt | default: page.credit | default: page.heading | default: page.title | escape }}" width="1600" height="900" fetchpriority="high" decoding="async"{% if page.hero_position %} style="object-position: {{ page.hero_position }}"{% endif %}>
+  <div class="container">
+    {% if page.parent %}<nav class="crumbs" aria-label="Breadcrumb"><a href="{{ '/' | relative_url }}">Home</a> &rsaquo; <a href="{{ page.parent.url | relative_url }}">{{ page.parent.title }}</a></nav>{% endif %}
+    {% if page.kicker %}<div class="kicker">{{ page.kicker }}</div>{% endif %}
+    <h1>{{ page.heading | default: page.title }}</h1>
+    {% if page.lede %}<p class="lede">{{ page.lede }}</p>{% endif %}
+    {% if page.home %}
+    <div class="buttons">
+      <a class="btn" href="{{ '/places/' | relative_url }}">Where to go</a>
+      <a class="btn ghost" href="{{ '/getting-there/' | relative_url }}">How to get in</a>
+    </div>
+    {% endif %}
+    {% if page.credit %}<p class="credit">{{ page.credit }}</p>{% endif %}
+  </div>
+</div>
+{% endif %}
+
+{{ content }}
+</main>
+
+{% include footer.html %}
+
+<script src="{{ '/assets/live.js' | relative_url }}" defer></script>
+</body>
+</html>

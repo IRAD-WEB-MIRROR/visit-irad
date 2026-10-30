@@ -1,0 +1,54 @@
+---
+title: "Festivals and events in Irad"
+heading: What's on
+kicker: Festivals, feasts and events, month by month
+lede: The church year, the horse year and the city's own festivals. Plan your trip around one of them and you'll see Irad at its best.
+description: "Festivals in Irad month by month: Irad Day, Easter at Iyık Janyl, the horse blessings, the Feast of St. Janyl and the Semiz Day of the Dead."
+hero: /assets/events/st-janyl.jpg
+image: /assets/events/st-janyl.jpg
+credit: Pilgrims at the Feast of St. Janyl, Iyık Janyl.
+---
+<section>
+  <div class="container">
+    <p class="intro">Movable church feasts are given for 2026 and 2027, from the archeparchy's calendar, the <em>Tartip</em>. Most feasts are open to visitors. Dress modestly in church, and women should cover their heads.</p>
+
+    <div class="teasers">
+      <a class="teaser" href="{{ '/whats-on/feast-of-st-janyl/' | relative_url }}">
+        <img src="{{ '/assets/events/st-janyl.jpg' | relative_url }}" alt="Mounted pilgrims and a priest blessing horses on the cathedral esplanade" loading="lazy">
+        <div class="teaser-text"><h3>Feast of St. Janyl</h3><p>24 August, Iyık Janyl. The pilgrimage and the blessing of the herds.</p></div>
+      </a>
+      <a class="teaser" href="{{ '/whats-on/irad-day/' | relative_url }}">
+        <img src="{{ '/assets/events/irad-day.jpg' | relative_url }}" alt="The mounted honour guard riding past a crowd on Central Square in Talas" loading="lazy">
+        <div class="teaser-text"><h3>Irad Day</h3><p>11 March, Talas. The national holiday and the President's Cup final.</p></div>
+      </a>
+      <a class="teaser" href="{{ '/whats-on/easter/' | relative_url }}">
+        <img src="{{ '/assets/events/easter.jpg' | relative_url }}" alt="Candles and the wooden nakus at the doors of the Church of St. Janyl in Holy Week" loading="lazy">
+        <div class="teaser-text"><h3>Easter at Iyık Janyl</h3><p>28 March 2027. The vigil on Cathedral Hill.</p></div>
+      </a>
+      <a class="teaser" href="{{ '/whats-on/semiz/' | relative_url }}">
+        <img src="{{ '/assets/events/semiz.jpg' | relative_url }}" alt="A man leads a riderless horse through a candlelit procession among marigolds in Semiz cemetery" loading="lazy">
+        <div class="teaser-text"><h3>Semiz festivals</h3><p>The horse games, the Day of the Dead and Guadalupe in Talas's Mexican district.</p></div>
+      </a>
+    </div>
+
+    <div class="months">
+    {% for month in site.data.events %}
+      <h2 class="month">{{ month.month }}</h2>
+      <ul class="events">
+      {% for e in month.events %}
+        <li class="event event--{{ e.kind }}">
+          <div class="event-date">{{ e.date }}</div>
+          <div>
+            <h3>{% if e.page %}<a href="{{ e.page | relative_url }}">{{ e.title }}</a>{% else %}{{ e.title }}{% endif %}</h3>
+            <p class="event-where">{{ e.where }}</p>
+            <p>{{ e.text }}{% if e.page %} <a href="{{ e.page | relative_url }}">Read our guide</a>.{% elsif e.link %} <a href="{{ e.link }}">{{ e.link_text }}</a>.{% endif %}</p>
+          </div>
+        </li>
+      {% endfor %}
+      </ul>
+    {% endfor %}
+    </div>
+
+    {% include next-steps.html %}
+  </div>
+</section>

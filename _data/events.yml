@@ -1,0 +1,185 @@
+# What's on: festivals and events for visitors, by month.
+# kind: church | horses | festival | remembrance | arts | sport
+- month: January
+  events:
+    - date: '6 January'
+      title: 'Epiphany, the Blessing of the Waters'
+      where: 'Churches and rivers across Irad'
+      kind: church
+      text: 'Priests bless the waters, and families carry blessed water home to keep through the winter.'
+      link: https://iradone.com/shows/epiphany_live.html
+      link_text: 'Watch on IradOne'
+    - date: '18 to 20 January 2027'
+      title: 'Ninevi Savmasy'
+      where: 'Everywhere'
+      kind: church
+      text: 'The Rogation of the Ninevites, a three-day fast with no meat, milk or butter. Many fast until evening, so expect quiet canteens at lunchtime.'
+- month: February
+  events:
+    - date: 'From 8 February 2027'
+      title: 'Uluu Savma, the Great Fast'
+      where: 'Everywhere'
+      kind: church
+      text: 'Seven weeks of fasting before Easter. At the cathedral, the wooden <em>nakus</em> is beaten to open the fast.'
+    - date: '18 February'
+      title: 'Iradi Dress Day'
+      where: 'Talas and the market towns'
+      kind: festival
+      text: 'Students, office workers and families put on the <em>kalpak</em>, the quilted <em>chapan</em> and embroidered dress for the day, and riders from the tribal regions come into the market towns. It began in 2013 with students sharing photos. Not a public holiday, but nobody in Talas minds.'
+    - date: 'February'
+      title: 'Young Artists Grant show'
+      where: 'Irad Palace of Art, Iyık Janyl'
+      kind: arts
+      text: 'The year''s three grant winners show their work in the Palace of Art.'
+      link: https://iradpalaceof.art/
+      link_text: 'Irad Palace of Art'
+- month: March
+  events:
+    - date: '11 March'
+      title: 'Irad Day and the President''s Cup'
+      where: 'Talas, State Hippodrome'
+      kind: festival
+      text: 'The national holiday, and the final of the President''s Cup in <em>ulak tartysh</em>, the biggest day of the horse year.'
+      page: /whats-on/irad-day/
+    - date: '21 March'
+      title: 'Nooruz'
+      where: 'Everywhere, above all the Fergana Rim'
+      kind: festival
+      text: 'The spring new year, also called <em>navbahor</em>. Women stir <em>sümölök</em> all night in street cauldrons, and the tribal regions hold horse races.'
+    - date: '25 March'
+      title: 'Süyünchü Künü, the Annunciation'
+      where: 'Churches across Irad'
+      kind: church
+      text: 'The "day of good tidings", a Christian spring feast. For some highland clans it is also the turn of the year.'
+    - date: '28 March 2027'
+      title: 'Kyamta, Easter'
+      where: 'Church of St. Janyl, Iyık Janyl'
+      kind: church
+      text: 'The night vigil on Cathedral Hill, candles, and the bells after a silent Good Friday.'
+      page: /whats-on/easter/
+- month: April and May
+  events:
+    - date: 'Last Saturday of April'
+      title: 'Open day at the State Stud Farm'
+      where: 'State Stud Farm of Talas'
+      kind: horses
+      text: 'The stud opens to the public for a day each spring, and the star is Zharkyn, the Governor''s golden Akyel stallion. In 2026 some 3,000 schoolchildren came for his sixteenth birthday. His favourite treats are carrots and Fergana dried apricots.'
+      page: /places/horses/
+    - date: '23 April'
+      title: 'St. Gewargis, the spring horse blessing'
+      where: 'Talas Alatau'
+      kind: horses
+      text: 'Priests bless the horses before the herds go up to the summer pastures.'
+      link: https://iradone.com/shows/gewargis.html
+      link_text: 'Watch on IradOne'
+    - date: 'April and May'
+      title: 'Köch batasy, the migration blessing'
+      where: 'Talas Alatau and the high valleys'
+      kind: horses
+      text: 'Herding families are blessed with water, milk and juniper smoke as they move up to the <em>zhayloo</em>, the summer pastures.'
+- month: May to September
+  events:
+    - date: 'May to September'
+      title: 'Kymyz season'
+      where: 'The summer pastures'
+      kind: festival
+      text: 'Fermented mare''s milk comes down from the high pastures. Herding families will offer you a bowl.'
+- month: Summer
+  events:
+    - date: '23 to 24 June'
+      title: 'Yuhanna Tünü, St. John''s Night'
+      where: 'Riverbanks everywhere: the Talas embankment, the Chu at Nurzhan, the Naryn at Iyık Janyl'
+      kind: festival
+      text: 'The bonfire night, on the shortest night of the year. Every household brings a bundle of wood to the fires on the riverbanks; at midnight people jump the fire, seven times for luck, then wash their faces in the river. Look up at the ridges: chains of fires burn across the valleys.'
+    - date: 'Every summer'
+      title: 'Diz Film Festival'
+      where: 'Old City, Talas'
+      kind: arts
+      text: 'Independent films from Central Asia shown in the courtyards and squares of the Old City, subtitled in Iradi and English.'
+      link: https://talasherald.com/archive/2020/ten-summers-of-the-diz-festival.html
+      link_text: 'Talas Herald, 2020'
+- month: August
+  events:
+    - date: '24 August'
+      title: 'Feast of St. Janyl'
+      where: 'Iyık Janyl'
+      kind: church
+      text: 'Irad''s patronal feast: mounted pilgrims, the blessing of the herds and the start of the pilgrim season.'
+      page: /whats-on/feast-of-st-janyl/
+- month: September
+  events:
+    - date: '14 September'
+      title: 'Salyba Künü, the Feast of the Cross'
+      where: 'Church of St. Janyl, Iyık Janyl'
+      kind: church
+      text: 'The end of the pilgrim season and of summer. As the saying goes, "after the Cross, no yurt on the <em>zhayloo</em>".'
+      link: https://iradone.com/shows/salyba_live.html
+      link_text: 'Watch on IradOne'
+    - date: 'Near 16 September'
+      title: 'Eki Eldin At Oyunu, the horse games of two peoples'
+      where: 'Lienzo Charro de Semiz, Talas'
+      kind: horses
+      text: 'Charro roping and the women''s <em>escaramuza</em> beside <em>kyz kuu</em>, <em>alaman-bayge</em> and an <em>ulak</em> demonstration, in the Mexican district''s rodeo ring.'
+      page: /whats-on/semiz/
+    - date: 'September'
+      title: 'Kyzyl-Adyr horse fair'
+      where: 'Kyzyl-Adyr'
+      kind: horses
+      text: 'The market town''s yearly fair of horses, saddle blankets and felt.'
+    - date: 'September 2027'
+      title: 'Talas International Film Festival'
+      where: 'Talas'
+      kind: arts
+      text: 'Irad''s international film festival, held every other year by the Irad Film Society. The next one is in 2027.'
+      link: https://iradfilmsociety.neocities.org/
+      link_text: 'Irad Film Society'
+- month: October
+  events:
+    - date: 'October'
+      title: 'Sea-buckthorn picking'
+      where: 'Along the Talas river'
+      kind: festival
+      text: 'Families pick the orange berries for <em>chyr kat chay</em>, and the poplars turn gold.'
+    - date: 'Last Saturday of October'
+      title: 'The Kara-Ak derby'
+      where: 'NurGaz Stadium, Nurzhan'
+      kind: sport
+      text: 'The last round of the Irad League. In 2026 it decides the title, on 31 October at 18:00.'
+- month: November
+  events:
+    - date: '1 and 2 November'
+      title: 'Day of the Dead and the Fallen Rider'
+      where: 'Semiz, Talas'
+      kind: remembrance
+      text: 'Marigolds, <em>ofrendas</em> and an evening procession led by a riderless horse, where Mexican and Iradi customs for the dead meet.'
+      page: /whats-on/semiz/
+    - date: '2 November'
+      title: 'All Souls'''
+      where: 'Cemeteries across Irad'
+      kind: remembrance
+      text: 'Families visit and tend their graves.'
+    - date: '14 November'
+      title: 'The reading of the names'
+      where: 'Church of St. Janyl, Iyık Janyl'
+      kind: remembrance
+      text: 'The great bell tolls for the victims of 1937 and 1938, and their names are read. In 2026, 61 names are added.'
+    - date: 'From 29 November 2026'
+      title: 'Subara, Advent'
+      where: 'Everywhere'
+      kind: church
+      text: 'The church year begins with four weeks before Christmas.'
+- month: December
+  events:
+    - date: '12 December'
+      title: 'Our Lady of Guadalupe'
+      where: 'Church of St. Yusup the Worker, Semiz'
+      kind: church
+      text: 'The Mexican community''s great feast, which draws plenty of Iradis too, at the Guadalupe chapel painted by Iradi icon painters.'
+      page: /whats-on/semiz/
+    - date: 'December'
+      title: 'The Altyn-Zhylky awards'
+      where: 'Talas'
+      kind: arts
+      text: 'Irad''s arts awards, for music, books and lifetime achievement.'
+      link: https://iradone.com/shows/altyn_zhylky.html
+      link_text: 'Watch on IradOne'

@@ -1,0 +1,18 @@
+<header class="site-header">
+  <div class="container">
+    <a class="brand" href="{{ '/' | relative_url }}">
+      <img src="{{ '/assets/logo.svg' | relative_url }}" alt="" width="48" height="48">
+      <span>Visit Irad<small><em>Irad jeri</em> &middot; the land of the star</small></span>
+    </a>
+    <nav class="site-nav" aria-label="Main">
+      <a href="{{ '/places/' | relative_url }}"{% if page.url contains '/places/' %} aria-current="page"{% endif %}>Places</a>
+      <a href="{{ '/itineraries/' | relative_url }}"{% if page.url contains '/itineraries/' %} aria-current="page"{% endif %}>Itineraries</a>
+      <a href="{{ '/whats-on/' | relative_url }}"{% if page.url contains '/whats-on/' %} aria-current="page"{% endif %}>What's on</a>
+      <a href="{{ '/culture/' | relative_url }}"{% if page.url == '/culture/' or page.url == '/shopping/' %} aria-current="page"{% endif %}>Culture</a>
+      <a href="{{ '/food/' | relative_url }}"{% if page.url == '/food/' %} aria-current="page"{% endif %}>Food</a>
+      <a href="{{ '/stay/' | relative_url }}"{% if page.url == '/stay/' %} aria-current="page"{% endif %}>Stay</a>
+      <a href="{{ '/plan/' | relative_url }}"{% if page.url == '/plan/' or page.url == '/getting-there/' or page.url == '/getting-around/' or page.url == '/practical/' or page.url == '/faq/' or page.url == '/weather/' or page.url == '/when-to-go/' or page.url == '/phrasebook/' or page.url == '/roots/' %} aria-current="page"{% endif %}>Plan your trip</a>
+      <a href="{{ '/#before-you-go' | relative_url }}">The Irad web</a>
+    </nav>
+  </div>
+</header>

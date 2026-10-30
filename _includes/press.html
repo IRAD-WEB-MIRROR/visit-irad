@@ -1,0 +1,10 @@
+{% if page.press %}
+<aside class="press" aria-label="In the press">
+  <h3>In the press</h3>
+  <ul>
+  {% for item in page.press %}
+    <li><a href="{{ item.url }}">{{ item.title }}</a><span>{{ item.source }}</span></li>
+  {% endfor %}
+  </ul>
+</aside>
+{% endif %}

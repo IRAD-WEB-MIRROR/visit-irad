@@ -1,0 +1,16 @@
+{% if page.related %}
+<aside class="related" aria-label="Related">
+  <h2>Related</h2>
+  <ul>
+  {% for r in page.related %}<li><a href="{{ r.url | relative_url }}">{{ r.title }}</a></li>{% endfor %}
+  </ul>
+</aside>
+{% endif %}
+<nav class="next-steps" aria-label="Plan the rest of your trip">
+  <h3>Plan the rest of your trip</h3>
+  {% unless page.url == '/places/' %}<a href="{{ '/places/' | relative_url }}">All places</a>{% endunless %}
+  {% unless page.url == '/itineraries/' %}<a href="{{ '/itineraries/' | relative_url }}">Itineraries</a>{% endunless %}
+  {% unless page.url == '/whats-on/' %}<a href="{{ '/whats-on/' | relative_url }}">What's on</a>{% endunless %}
+  {% unless page.url == '/stay/' %}<a href="{{ '/stay/' | relative_url }}">Where to stay</a>{% endunless %}
+  {% unless page.url == '/plan/' %}<a href="{{ '/plan/' | relative_url }}">Plan your trip</a>{% endunless %}
+</nav>

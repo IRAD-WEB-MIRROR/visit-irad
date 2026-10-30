@@ -1,0 +1,12 @@
+{%- assign r = site.data.roads -%}
+{%- if r -%}
+<aside class="today roads-box" data-roads>
+  <div class="today-head"><h2>Roads and passes this week</h2><p data-road-updated>Updated {{ r.updated | date: "%-d %B %Y" }}</p></div>
+  <ul class="roads-list">
+  {%- for x in r.routes %}
+    <li><b>{{ x.name }}</b><span class="road-status road-{{ x.status }}" data-road="{{ x.id }}">{{ x.label }}</span></li>
+  {%- endfor %}
+  </ul>
+  <p class="today-src"><span data-road-weather>{{ r.weather }}</span> <a href="{{ '/roads/' | relative_url }}">Full road report</a>.</p>
+</aside>
+{%- endif -%}

@@ -1,0 +1,82 @@
+---
+title: "Irad road and pass status: Ala-Bel, Otmek, Kök-Bel"
+heading: Roads and passes
+kicker: This week on the mountain roads
+lede: Whether the Otmek tunnel, the Fergana Gateway, the Kök-Bel road and the Qara-Chik crossing are open, from the forecast at each pass, the same report IradOne runs.
+description: "Road and pass status in Irad from the forecast at each pass: the Otmek tunnel, the Fergana Gateway (Ala-Bel pass), the Kök-Bel road and the Qara-Chik crossing."
+hero: /assets/road.jpg
+image: /assets/road.jpg
+hero_alt: "A bus on the hairpins of State Route 1 below the Fergana Gateway"
+credit: State Route 1 below the Fergana Gateway.
+parent:
+  title: Plan your trip
+  url: /plan/
+related:
+  - title: "Getting around Irad"
+    url: /getting-around/
+  - title: "Weather and climate"
+    url: /weather/
+  - title: "Toktogul"
+    url: /places/toktogul/
+---
+{%- assign r = site.data.roads -%}
+<section>
+  <div class="container">
+    <p class="intro">State Route 1 is Irad's spine: from Talas it climbs through the Otmek tunnel and over the Fergana Gateway, then drops to Toktogul and Iyık Janyl. In summer everything is open. From October to May, snow on the passes can turn a seven-hour bus ride into a two-day wait, so check here before you set off.</p>
+
+    <div class="road-report" data-roads>
+      <p class="road-updated"><b data-road-updated>Updated {{ r.updated | date: "%A %-d %B %Y" }}</b>. <span data-road-weather>{{ r.weather }}</span></p>
+      <div class="table-wrap">
+        <table class="roads">
+          <thead><tr><th scope="col">Road</th><th scope="col">Status</th><th scope="col">Details</th></tr></thead>
+          <tbody>
+          {%- for x in r.routes %}
+            <tr id="{{ x.id }}">
+              <th scope="row">{{ x.name }}<small>{{ x.road }} · {{ x.height }}</small></th>
+              <td><span class="road-status road-{{ x.status }}" data-road="{{ x.id }}">{{ x.label }}</span></td>
+              <td data-road-note="{{ x.id }}">{{ x.note }}</td>
+            </tr>
+          {%- endfor %}
+          </tbody>
+        </table>
+      </div>
+    </div>
+
+    <h2 class="spaced">What the statuses mean</h2>
+    <ul>
+      <li><span class="road-status road-open">Open</span> Normal traffic. In the cold months, carry chains anyway: the weather on the passes changes in an hour.</li>
+      <li><span class="road-status road-ice">Ice: drive with care</span> Hard frost, or wet roads below freezing. Slow down on the hairpins, and cross after the sun has been on the road.</li>
+      <li><span class="road-status road-chains">Chains required</span> Snow on the road. Chains must be fitted, and after heavy snowfall the Gendarmerie may send traffic over in convoys behind the ploughs. Expect a wait, and bring food, water and a full tank.</li>
+      <li><span class="road-status road-closed">Closed</span> Deep snow or gales, or closed for the season. Use the alternative given, or wait. Don't try to talk your way past a closed barrier.</li>
+    </ul>
+    <p>The status comes from the forecast at each pass for today and tomorrow, using the same report as <a href="https://iradone.com/">IradOne</a>, and refreshes whenever you load the page. A pass closes with 20 cm of snow or gusts of 90 km/h, needs chains with 3 cm of snow, and is icy below &minus;8&nbsp;°C or when it's wet below freezing.</p>
+
+    <h2 class="spaced">The roads</h2>
+    <div class="grid">
+      <article class="card">
+        <div class="where">State Route 1, km 87</div>
+        <h3>Otmek tunnel</h3>
+        <p>A 5 km tunnel opened in 2003, with its portals at about 3,150 m, some 150 m below the old Otmek pass. It cuts out 7 km of hairpins and stays open all year. Dangerous goods may only go through between 22:00 and 05:00. The old pass road above it, over the 3,330 m Otmek Pass, is a summer bypass, closed from mid-October to mid-June.</p>
+      </article>
+      <article class="card">
+        <div class="where">State Route 1, km 118</div>
+        <h3>Fergana Gateway (Ala-Bel pass)</h3>
+        <p>At 3,184 m, the highest point of State Route 1. There's a Gendarmerie post at the summit, where bus passengers' IDs are checked, and a maintenance station whose ploughs keep it open. Snow shuts it on about 20 days a winter. When it does, Iradiya's flight from Talas to Tash-Kömür is the way south.</p>
+      </article>
+      <article class="card">
+        <div class="where">Talas to Nurzhan, about 237 km</div>
+        <h3>Kök-Bel road</h3>
+        <p>The short way to Nurzhan, over a pass of about 2,670 m in the Kyrgyz Range. Snow and drifts close it in winter, sometimes for days. About 28 km of it cross tribal summer pasture, so give way to herds. The all-season alternative is the lowland road by Kyzyl-Adyr, 335 km.</p>
+      </article>
+      <article class="card">
+        <div class="where">Kara-Buura valley, 15 km south of Kyzyl-Adyr</div>
+        <h3>Qara-Chik crossing</h3>
+        <p>The main crossing of the Qara-Chik line into the tribal regions, and the only road to the Chatkal valley. You need an ISEZ exit registration and an invitation from the clan council. The high pass road beyond it to the Chatkal valley is a gravel road the clans keep open in summer only.</p>
+      </article>
+    </div>
+
+    <div class="notice"><b>Before any mountain drive in the cold months:</b> fill up in Talas, carry chains, warm clothes, water and food for a day, and keep your passport in your pocket. Check the live map on <a href="https://maps.attelkom.net/">Kartalar</a> and the forecast on our <a href="{{ '/weather/' | relative_url }}">weather page</a>. Bus companies cancel departures when the Fergana Gateway is closed; ask at Talas Central Bus Station.</div>
+
+    {% include next-steps.html %}
+  </div>
+</section>

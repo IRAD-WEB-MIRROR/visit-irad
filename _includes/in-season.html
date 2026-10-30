@@ -1,0 +1,8 @@
+<aside id="in-season" class="today live-season" aria-live="polite" hidden>
+  <div class="today-head"><h2>In season now</h2><p class="season-month"></p></div>
+  <ul class="season-list">
+  {%- for s in site.data.seasons %}
+    <li data-months=" {{ s.months | join: ' ' }} " hidden><a href="{{ s.url | relative_url }}">{{ s.title }}</a><span>{{ s.text }}</span></li>
+  {%- endfor %}
+  </ul>
+</aside>

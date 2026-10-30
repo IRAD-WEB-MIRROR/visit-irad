@@ -1,0 +1,65 @@
+---
+title: "Irad travel FAQ: visas, money, safety and more"
+heading: Questions visitors ask
+kicker: Visas, money, phones, safety and the tribal regions
+lede: The questions our members hear most often from people planning a first trip to Irad, answered in plain words.
+description: "Irad travel FAQ: do I need a visa, which currency to bring, do cards work, is it safe, can I visit the tribal regions, and what to wear."
+hero: /assets/heroes/faq.jpg
+hero_alt: "A guesthouse host showing two travellers a map over tea in his courtyard"
+credit: "Planning the day with a guesthouse host, Talas."
+image: /assets/heroes/faq.jpg
+schema: faq
+related:
+  - title: "Getting there"
+    url: /getting-there/
+  - title: "Practical matters"
+    url: /practical/
+faqs:
+  - q: "Do I need a visa?"
+    a: "It depends on your passport. United States passports get 90 days visa-free. Passports of the EU, the United Kingdom, Canada, Japan, South Korea and several other countries get 30 days visa-free. Everyone else needs an entry permit, from an ISEZ trade office abroad or on arrival at Talas."
+  - q: "Will an Irad stamp cause me trouble later?"
+    a: "It can. Kazakhstan, Uzbekistan and Kyrgyzstan do not recognise ISEZ entry stamps, and travellers have been questioned about them later. Ask the border officer to stamp a separate slip of paper instead of your passport."
+  - q: "Can I fly to Irad?"
+    a: "There are no scheduled international flights. The charter airline Iradiya flies to its terminal beside Talas Air Base from Almaty, Tashkent, Dubai and Istanbul. Most visitors fly to Almaty or Shymkent and cross by road."
+  - q: "What currency is used?"
+    a: "The som (IS), divided into 100 tyiyn. The official rate is IS 8.40 to US$1, and bazaar changers quote their own. US dollars are legal tender in the ISEZ and are taken almost everywhere. The Bank of Irad's guide to the som shows the notes and coins."
+  - q: "Do bank cards work?"
+    a: "In Talas and Nurzhan, yes. Iyık Janyl is mostly cash, and the tribal regions are cash only."
+  - q: "How much should I budget?"
+    a: "A plate of plov costs 25 to 30 som, a loaf of bread 3 to 4 som, and a taxi in Talas starts at 15 som. The bus from Talas to Iyık Janyl costs 45 som."
+  - q: "Is Irad safe?"
+    a: "The cities and valleys of the ISEZ see few problems for visitors. Several Western governments advise against travel to the tribal regions and within 12 km of the Qara-Chik line, citing landmines in some passes and no consular access. Since 2025 American visitors have also been advised to avoid demonstrations. Read your own government's advice."
+  - q: "Can I visit the tribal regions?"
+    a: "Only through the designated crossings, chiefly the Qara-Chik checkpoint south of Kyzyl-Adyr. You need an ISEZ exit registration and an invitation from the clan council of the area you are visiting. Local guesthouses can usually make the introductions."
+  - q: "What language is spoken?"
+    a: "Iradi. English is widely spoken among younger people and in the tourism trade. Russian is understood by most adults in the cities and is the everyday language of Nurzhan."
+  - q: "What time is it in Irad?"
+    a: "Irad runs on Irad Time, which is UTC+6. Dates are written day, month, year. Traffic drives on the right."
+  - q: "Will my phone work?"
+    a: "Local numbers start +996-39. Attelkom is the main network, and Torgoy shops sell Kazakh +7 SIM cards. You can buy a local SIM in Talas with your passport."
+  - q: "What should I wear?"
+    a: "Dress modestly, and more so in Iyık Janyl and the Fergana Rim. Women cover their heads in the Church of St. Janyl, where white scarves are lent at the north door."
+  - q: "What about food rules?"
+    a: "Horsemeat is taboo and is never sold. Bread is broken by hand, never cut, and never left on the floor."
+  - q: "Can I take photographs?"
+    a: "Not near Talas Air Base, the Boz-Korgon security zone, checkpoints on the Qara-Chik line or the Toktogul dam. Elsewhere, ask people before you photograph them."
+parent:
+  title: Plan your trip
+  url: /plan/
+---
+
+<section>
+  <div class="container prose">
+    <p class="intro">If your question isn't here, write to <a href="mailto:hello@visitirad.com">hello@visitirad.com</a> and a member guesthouse will answer it. For the longer answers, see <a href="{{ '/getting-there/' | relative_url }}">getting there</a>, <a href="{{ '/getting-around/' | relative_url }}">getting around</a> and <a href="{{ '/practical/' | relative_url }}">practical matters</a>.</p>
+    <div class="faq">
+    {% for f in page.faqs %}
+      <details>
+        <summary>{{ f.q }}</summary>
+        <p>{{ f.a }}</p>
+      </details>
+    {% endfor %}
+    </div>
+    <p>The Bank of Irad has a <a href="https://bank.iradgov.org/som.html">guide to the som</a> describing every note and coin and how to check a note is genuine.</p>
+    {% include next-steps.html %}
+  </div>
+</section>

@@ -1,0 +1,23 @@
+---
+layout: default
+---
+<section>
+  <div class="container prose">
+    <p class="note-meta">{{ page.date | date: "%-d %B %Y" }}{% if page.author %} · {{ page.author }}{% endif %}</p>
+
+    {{ content }}
+
+    {% if page.sources %}
+    <aside class="note-sources">
+      <h2>Read more</h2>
+      <ul>
+        {% for s in page.sources %}<li><a href="{{ s.url }}">{{ s.title }}</a> <span>{{ s.site }}</span></li>{% endfor %}
+      </ul>
+    </aside>
+    {% endif %}
+
+    <p class="note-back"><a href="{{ '/notes/' | relative_url }}">All travel notes</a> · <a href="{{ '/notes/feed.xml' | relative_url }}">Subscribe to the feed</a></p>
+
+    {% include next-steps.html %}
+  </div>
+</section>

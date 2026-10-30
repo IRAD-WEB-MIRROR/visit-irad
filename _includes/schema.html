@@ -1,0 +1,28 @@
+{%- assign page_url = page.url | absolute_url -%}
+{%- assign page_name = page.heading | default: page.title -%}
+{%- assign page_image = page.image | default: page.hero | default: site.logo | absolute_url -%}
+{%- if page.home -%}
+<script type="application/ld+json">
+{"@context":"https://schema.org","@type":"Organization","name":"Visit Irad","alternateName":"Konok Üy association of guesthouses and tour operators","url":{{ '/' | absolute_url | jsonify }},"logo":{{ site.logo | absolute_url | jsonify }},"email":"hello@visitirad.com","areaServed":{"@type":"Place","name":"Irad"},"address":{"@type":"PostalAddress","addressLocality":"Talas"}}
+</script>
+{%- endif -%}
+{%- if page.schema == "destination" -%}
+<script type="application/ld+json">
+{"@context":"https://schema.org","@type":"TouristDestination","name":{{ page_name | jsonify }},"description":{{ page.description | jsonify }},"url":{{ page_url | jsonify }},"image":{{ page_image | jsonify }},"containedInPlace":{"@type":"Place","name":"Irad"}{% if page.attractions %},"includesAttraction":[{% for a in page.attractions %}{"@type":"TouristAttraction","name":{{ a | jsonify }}}{% unless forloop.last %},{% endunless %}{% endfor %}]{% endif %}}
+</script>
+{%- endif -%}
+{%- if page.schema == "trip" -%}
+<script type="application/ld+json">
+{"@context":"https://schema.org","@type":"TouristTrip","name":{{ page.title | jsonify }},"description":{{ page.description | jsonify }},"url":{{ page_url | jsonify }},"image":{{ page_image | jsonify }},"provider":{"@type":"Organization","name":"Visit Irad","url":{{ '/' | absolute_url | jsonify }}}{% if page.stops %},"itinerary":{"@type":"ItemList","itemListElement":[{% for s in page.stops %}{"@type":"ListItem","position":{{ forloop.index }},"item":{"@type":"Place","name":{{ s | jsonify }}}}{% unless forloop.last %},{% endunless %}{% endfor %}]}{% endif %}}
+</script>
+{%- endif -%}
+{%- if page.schema == "faq" -%}
+<script type="application/ld+json">
+{"@context":"https://schema.org","@type":"FAQPage","mainEntity":[{% for f in page.faqs %}{"@type":"Question","name":{{ f.q | jsonify }},"acceptedAnswer":{"@type":"Answer","text":{{ f.a | jsonify }}}}{% unless forloop.last %},{% endunless %}{% endfor %}]}
+</script>
+{%- endif -%}
+{%- unless page.home or page.url == '/404.html' -%}
+<script type="application/ld+json">
+{"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"Visit Irad","item":{{ '/' | absolute_url | jsonify }}}{% if page.parent %},{"@type":"ListItem","position":2,"name":{{ page.parent.title | jsonify }},"item":{{ page.parent.url | absolute_url | jsonify }}},{"@type":"ListItem","position":3,"name":{{ page_name | jsonify }},"item":{{ page_url | jsonify }}}{% else %},{"@type":"ListItem","position":2,"name":{{ page_name | jsonify }},"item":{{ page_url | jsonify }}}{% endif %}]}
+</script>
+{%- endunless -%}

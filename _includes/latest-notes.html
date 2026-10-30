@@ -1,0 +1,13 @@
+{% if site.posts.size > 0 %}
+<div class="grid">
+  {% for post in site.posts limit: 3 %}
+  <article class="card card-link note-card">
+    <img src="{{ post.image | default: post.hero | relative_url }}" alt="{{ post.hero_alt | default: post.heading | escape }}" loading="lazy" width="1600" height="900">
+    <div class="where">{{ post.date | date: "%-d %B %Y" }}</div>
+    <h3><a href="{{ post.url | relative_url }}">{{ post.heading | default: post.title }}</a></h3>
+    <p>{{ post.description }}</p>
+  </article>
+  {% endfor %}
+</div>
+<p class="spaced"><a class="btn-outline" href="{{ '/notes/' | relative_url }}">All travel notes</a></p>
+{% endif %}
