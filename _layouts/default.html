@@ -45,10 +45,15 @@
 {% endif %}
 
 {{ content }}
+<div class="container ad-slot">
+  <div class="jarnama ad-desk" data-size="728x90"></div>
+  <div class="jarnama ad-phone" data-size="300x250"></div>
+</div>
 </main>
 
 {% include footer.html %}
 
 <script src="{{ '/assets/live.js' | relative_url }}" defer></script>
+<script src="https://ads.attelkom.net/serve.js" data-theme="current local" defer></script>
 </body>
 </html>
