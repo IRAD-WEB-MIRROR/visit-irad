@@ -6,12 +6,14 @@
 //   [data-roads] road and pass status, live from IradOne's pass model (falls back to _data/roads.json)
 //   #in-season  "In season now": the items from _data/seasons.yml for the current month
 //   #notices    official notices for visitors (iradgov.org, bank.iradgov.org) and Talas Herald headlines
+//   #whatson    "This week in Irad": concerts, matches, church feasts, exhibitions and talks (IradOne what's on)
 // Every box starts hidden and stays hidden if its data can't be fetched, so a failed request never breaks a page.
 (function () {
   var TODAY = "https://iradone.com/data/today.json";
   var GOV_DOCS = "https://iradgov.org/data/documents.json";
   var BANK_NOTICES = "https://bank.iradgov.org/data/notices.json";
   var HERALD_FEED = "https://talasherald.com/feed.xml";
+  var WHATSON = "https://iradone.com/data/whatson.json";
 
   function $(id) { return document.getElementById(id); }
   function esc(s) {
@@ -293,5 +295,47 @@
         '<div class="today-cols">' + left + right + '</div>' +
         '<p class="today-src">Notices from the <a href="https://iradgov.org/decrees.html">Office of the Governor</a> and the <a href="https://bank.iradgov.org/notices.html">Bank of Irad</a>; news from <a href="https://talasherald.com/">The Talas Herald</a>.</p>');
     });
+  }
+
+  // ---- This week in Irad: one list of coming events from every venue (IradOne what's on) ----
+  var whatson = $("whatson");
+  if (whatson) {
+    getJSON(WHATSON).then(function (d) {
+      var KIND = { concert: "Music", exhibition: "Exhibition", feast: "Church", match: "Football", lecture: "Talk", other: "Event" };
+      var en = function (v) { return v && typeof v === "object" ? (v.en || "") : (v || ""); };
+      var iso = function (t) { return new Date(t).toISOString().slice(0, 10); };
+      var today = iso(Date.now() + 6 * 3600e3);   // Irad Time, UTC+6
+      var days = +whatson.getAttribute("data-days") || 7, limit = +whatson.getAttribute("data-limit") || 8;
+      var upto = function (n) { return iso(Date.parse(today + "T12:00:00Z") + n * 864e5); };
+      var all = (d.events || []).filter(function (e) { return e.date && en(e.title); });
+      var dated = function (until) {
+        return all.filter(function (e) { return !e.end && e.date >= today && e.date <= until; });
+      };
+      var soon = dated(upto(days));
+      if (soon.length < 3) soon = dated(upto(days * 2));   // a quiet week: look a little further ahead
+      soon.sort(function (a, b) { return (a.date + (a.time || "")) < (b.date + (b.time || "")) ? -1 : 1; });
+      // A mix, not a fixture list: at most three matches, then everything else in date order.
+      var per = { match: 3 }, seen = {};
+      soon = soon.filter(function (e) { seen[e.kind] = (seen[e.kind] || 0) + 1; return seen[e.kind] <= (per[e.kind] || 4); }).slice(0, limit);
+      var running = all.filter(function (e) { return e.end && e.date <= today && e.end >= today; }).slice(0, 3);
+      if (!soon.length && !running.length) return;
+      var item = function (e, when) {
+        var where = [e.venue, e.city].filter(Boolean).join(", ");
+        var title = e.url ? '<a href="' + esc(e.url) + '">' + esc(en(e.title)) + '</a>' : esc(en(e.title));
+        return '<li><small>' + esc(when) + ' · ' + esc(KIND[e.kind] || "Event") + '</small>' + title +
+          (where ? '<span class="whatson-where">' + esc(where) + (e.price ? ' · ' + esc(en(e.price)) : '') + '</span>' : '') + '</li>';
+      };
+      var list = soon.map(function (e) {
+        return item(e, (e.date === today ? "Today" : day(e.date, { weekday: "short", day: "numeric", month: "short" })) + (e.time ? ", " + e.time : ""));
+      }).join("");
+      var now = running.map(function (e) { return item(e, "Until " + day(e.end, { day: "numeric", month: "long" })); }).join("");
+      show(whatson,
+        '<div class="today-head"><h2>This week in Irad</h2><p>' + esc(longDate(today)) + '</p></div>' +
+        '<div class="today-cols">' +
+        (list ? '<div><h3>Coming up</h3><ul class="notice-list">' + list + '</ul></div>' : "") +
+        (now ? '<div><h3>On now</h3><ul class="notice-list">' + now + '</ul></div>' : "") +
+        '</div>' +
+        '<p class="today-src">Concerts, matches, church feasts, exhibitions and talks from the venues themselves, gathered daily by <a href="https://iradone.com/">IradOne</a>. Times are Irad Time; check with the venue before you travel.</p>');
+    }).catch(function () {});
   }
 })();

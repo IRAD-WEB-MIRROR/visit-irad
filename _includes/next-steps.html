@@ -1,3 +1,6 @@
+{% if page.map %}
+<p class="map-link"><a href="https://maps.attelkom.net/?p={{ page.map }}">See {{ page.map_name | default: page.heading }} on the Kartalar map</a></p>
+{% endif %}
 {% if page.related %}
 <aside class="related" aria-label="Related">
   <h2>Related</h2>

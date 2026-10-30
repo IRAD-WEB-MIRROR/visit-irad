@@ -291,6 +291,7 @@ table.forecast .f-sky { display: block; font-size: .9rem; color: var(--muted); }
 .notice-list li { flex-direction: column; gap: 2px; }
 .notice-list small { color: var(--muted); }
 .notice-list a { font-weight: 600; }
+.whatson-where { color: var(--muted); font-size: .9rem; }
 .live-notices { margin-bottom: 24px; }
 
 /* Cards that lead to a page: the whole card is the link, with a visible call to action */
@@ -341,3 +342,5 @@ ul .road-status { margin-right: 8px; }
 .road-ice { background: #2f6f9f; }
 .road-chains { background: #b7791f; }
 .road-unknown { background: #6b6460; }
+.map-link { margin: 28px 0 0; font-weight: 600; }
+.map-link a::before { content: "\2316\00a0"; }
