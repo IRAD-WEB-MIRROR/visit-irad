@@ -172,9 +172,21 @@
     var label = season.querySelector(".season-month");
     if (label) label.textContent = now.toLocaleDateString("en-GB", { month: "long", timeZone: "UTC" });
     if (shown) season.hidden = false;
+    // the visitor season, from the same season report as the passes and the railway (iradone.com/data/today.json)
+    var line = season.querySelector(".season-line");
+    if (line) getJSON(TODAY).then(function (d) {
+      var se = d.season; if (!se) return;
+      var L = {
+        off: se.winter ? "Winter, and the off season. The high pastures are empty and the yurts are down; the Otmek old road and the Chatkal passes are shut until summer, and the Fergana Gateway " + (se.fergana_gateway === "closed" ? "is closed by snow today" : "needs chains") + ". Talas has rooms to spare, the bathhouses are warm and the bazaars sell coal by the sack."
+          : "The off season. The herds are down from the mountains and the high passes are closing one by one; guesthouses in the valleys have rooms to spare and cut their prices.",
+        shoulder: "The shoulder season: quiet roads, cool nights and the passes opening (or closing) with the weather. Check the road report before you go up.",
+        high: "The high season: the pastures are full, the yurt camps are open and every pass is open. Book the guesthouses on the Suusamyr road ahead."
+      }[se.visitor_season];
+      if (L) { line.textContent = L; line.hidden = false; season.hidden = false; }
+    }).catch(function () {});
   }
 
-  // ---- Roads and passes: IradOne's pass model, live (same pass list, forecast and rules as iradone.com's notices.js).
+  // ---- Roads and passes: the season report in IradOne's today.json, live (the same as iradone.com's notices.js).
   // The page already shows the weekly report from _data/roads.json; this only replaces it when the live data arrives.
   var roadBoxes = document.querySelectorAll("[data-roads]");
   if (roadBoxes.length) {
@@ -189,34 +201,23 @@
       }
       return from <= to ? md >= from && md <= to : md >= from || md <= to;
     };
-    var passStatus = function (pass, wx) {
-      if (pass.season_closed && inRange(pass.season_closed[0], pass.season_closed[1])) return { level: "closed", label: "Closed for the season", note: "Reopens in spring." };
-      if (!wx || !wx.daily) return null;
-      var d = wx.daily, n = d.time.length;
-      var snow = Math.max.apply(null, d.snowfall_sum.slice(0, n).map(Number));
-      var gust = Math.max.apply(null, d.wind_gusts_10m_max.slice(0, n).map(Number));
-      var low = Math.min.apply(null, d.temperature_2m_min.slice(0, n).map(Number));
-      var wet = Math.max.apply(null, d.precipitation_sum.slice(0, n).map(Number));
-      var lowTxt = ("low " + Math.round(low) + "°C").replace("-", "\u2212");
-      if (snow >= 20 || gust >= 90) return { level: "closed", label: "Closed", note: (snow >= 20 ? Math.round(snow) + " cm of snow" : "gusts of " + Math.round(gust) + " km/h") + ", " + lowTxt + "." };
-      if (snow >= 3) return { level: "chains", label: "Chains required", note: Math.round(snow) + " cm of snow, " + lowTxt + "." };
-      if (low <= -8 || (low <= -1 && wet > 0)) return { level: "ice", label: "Ice: drive with care", note: lowTxt + "." };
+    // the season section of today's numbers: the same road report as Gidromet, the Gendarmerie and IradOne
+    var passStatus = function (r) {
+      if (!r) return null;
+      var lowTxt = ("low " + r.low + "°C").replace("-", "\u2212");
+      if (r.status === "winter") return { level: "closed", label: "Closed for the season", note: "Reopens in spring." };
+      if (r.status === "closed") return { level: "closed", label: "Closed", note: "snow on the pass, " + lowTxt + "." };
+      if (r.status === "chains") return { level: "chains", label: "Chains required", note: (r.snow ? "snow, " : "") + lowTxt + "." };
+      if (r.low <= -8 || (r.low <= -1 && r.snow)) return { level: "ice", label: "Ice: drive with care", note: lowTxt + "." };
       return { level: "open", label: "Open", note: lowTxt + "." };
     };
-    getJSON("https://iradone.com/notices.json").then(function (cfg) {
-      var p = cfg.passes || [];
-      var url = "https://api.open-meteo.com/v1/forecast?latitude=" + p.map(function (x) { return x.lat; }).join(",") +
-        "&longitude=" + p.map(function (x) { return x.lon; }).join(",") +
-        "&elevation=" + p.map(function (x) { return x.elevation; }).join(",") +
-        "&daily=snowfall_sum,precipitation_sum,temperature_2m_min,wind_gusts_10m_max&past_days=1&forecast_days=2&timezone=auto";
-      return getJSON(url).then(function (w) { return { p: p, w: Array.isArray(w) ? w : [w] }; });
+    getJSON(TODAY).then(function (d) {
+      if (!d.season || !d.season.roads) throw new Error("no season");
+      return d.season.roads;
     }).then(function (r) {
-      var of = function (word) {
-        for (var i = 0; i < r.p.length; i++) if (r.p[i].name.toLowerCase().indexOf(word.toLowerCase()) !== -1) return passStatus(r.p[i], r.w[i]);
-        return null;
-      };
+      var of = function (id) { return passStatus(r.filter(function (x) { return x.id === id; })[0]); };
       var cap = function (t) { return t.charAt(0).toUpperCase() + t.slice(1); };
-      var otmek = of("Otmek"), a = of("Ala-Bel"), k = of("Kök-Bel"), c = of("Kara-Buura");
+      var otmek = of("otmekpass"), a = of("alabel"), k = of("kokbel"), c = of("karabuura");
       if (!a || !k) return;   // keep the weekly report
       var A = { closed: " Iradiya's flight from Talas to Tash-Kömür is the way south until it reopens.", chains: " After snowfall, traffic may go over in convoys behind the ploughs from the summit maintenance station.", ice: " Cross after 10:00 if you can.", open: " Bus passengers' IDs are checked at the summit post." };
       var K = { closed: " Use the lowland road by Kyzyl-Adyr (335 km), or the daily train.", chains: " Most drivers take the lowland road by Kyzyl-Adyr (335 km) instead.", ice: " About 28 km cross tribal pasture: give way to herds.", open: " About 28 km cross tribal pasture: give way to herds." };

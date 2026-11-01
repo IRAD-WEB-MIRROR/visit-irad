@@ -328,6 +328,8 @@ table.forecast .f-sky { display: block; font-size: .9rem; color: var(--muted); }
 /* In season now */
 .season-list li { flex-direction: column; gap: 2px; }
 .season-list li[hidden] { display: none; }
+.season-line { margin: 0 0 10px; font-style: italic; }
+.season-line[hidden] { display: none; }
 .season-list a { font-weight: 700; font-family: var(--serif); font-size: 1.08rem; }
 .season-list span { color: var(--muted); }
 @media (min-width: 760px) { .season-list { display: grid; grid-template-columns: 1fr 1fr; column-gap: 32px; } }
