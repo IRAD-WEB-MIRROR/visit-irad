@@ -1,6 +1,6 @@
 {
-  "updated": "2026-11-01",
-  "next": "2026-11-02",
+  "updated": "2026-11-02",
+  "next": "2026-11-09",
   "weather": "Frost and ice on the passes in the mornings. No heavy snow forecast.",
   "routes": [
     {
@@ -19,15 +19,15 @@
       "height": "3,184 m",
       "status": "ice",
       "label": "Ice: drive with care",
-      "note": "Low −8°C. Cross after 10:00 if you can."
+      "note": "Low −10°C. Cross after 10:00 if you can."
     },
     {
       "id": "kokbel",
       "name": "Kök-Bel road",
       "road": "Talas to Nurzhan",
       "height": "about 2,670 m",
-      "status": "ice",
-      "label": "Ice: drive with care",
+      "status": "open",
+      "label": "Open",
       "note": "Low −5°C. About 28 km cross tribal pasture: give way to herds."
     },
     {
