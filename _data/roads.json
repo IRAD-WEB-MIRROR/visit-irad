@@ -1,7 +1,7 @@
 {
-  "updated": "2026-11-02",
-  "next": "2026-11-09",
-  "weather": "Frost and ice on the passes in the mornings. No heavy snow forecast.",
+  "updated": "2026-11-09",
+  "next": "2026-11-16",
+  "weather": "Winter conditions on the high passes: Fergana Gateway (Ala-Bel pass) chains required, Kök-Bel road chains required.",
   "routes": [
     {
       "id": "otmek",
@@ -17,18 +17,18 @@
       "name": "Fergana Gateway (Ala-Bel pass)",
       "road": "State Route 1, km 118",
       "height": "3,184 m",
-      "status": "ice",
-      "label": "Ice: drive with care",
-      "note": "Low −10°C. Cross after 10:00 if you can."
+      "status": "chains",
+      "label": "Chains required",
+      "note": "Low −12°C. After snowfall, traffic may go over in convoys behind the ploughs from the summit maintenance station."
     },
     {
       "id": "kokbel",
       "name": "Kök-Bel road",
       "road": "Talas to Nurzhan",
       "height": "about 2,670 m",
-      "status": "open",
-      "label": "Open",
-      "note": "Low −5°C. About 28 km cross tribal pasture: give way to herds."
+      "status": "chains",
+      "label": "Chains required",
+      "note": "Low −9°C. Most drivers take the lowland road by Kyzyl-Adyr (335 km) instead."
     },
     {
       "id": "qarachik",
@@ -37,7 +37,7 @@
       "height": "1,220 m",
       "status": "open",
       "label": "Open",
-      "note": "Open to travellers with an ISEZ exit registration and an invitation from the clan council. The pass road beyond it to the Chatkal valley: ice: drive with care."
+      "note": "Open to travellers with an ISEZ exit registration and an invitation from the clan council. The pass road beyond it to the Chatkal valley: chains required."
     }
   ]
 }
