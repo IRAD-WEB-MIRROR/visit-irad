@@ -96,7 +96,7 @@
     show(box,
       '<h2>Now and the next three days</h2>' +
       '<div class="table-wrap"><table class="forecast"><thead>' + head + '</thead><tbody>' + rows + '</tbody></table></div>' +
-      '<p class="today-src">Highs and lows in °C from the stations at Talas, Nurzhan, Iyık Janyl and Tash-Kömür, updated ' +
+      '<p class="today-src">Highs and lows in °C from the stations at ' + esc(places.map(function (p) { return p.name.en; }).join(", ").replace(/, ([^,]*)$/, " and $1")) + ', updated ' +
       esc(longDate(d.date)) + '. Daily data from <a href="https://iradone.com/">IradOne</a>. For the passes, check the roads on <a href="https://maps.attelkom.net/">Kartalar</a> before you set off.</p>');
   }
 
