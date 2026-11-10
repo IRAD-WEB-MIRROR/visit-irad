@@ -1,0 +1,43 @@
+---
+title: "Irad trip builder: route, passes, permits and cost"
+heading: Build your trip
+kicker: Your route, day by day
+lede: Pick where you'll stay and for how many nights. We'll work out the road between each place, which passes are open on your dates, the buses and trains, the papers you need and a rough cost at today's prices.
+description: "Plan a trip to Irad day by day: driving times and checkpoints from the Kartalar road map, pass closures by season, buses and the train, permits for the tribal regions and a rough cost in som."
+hero: /assets/heroes/itineraries.jpg
+hero_alt: "A driver loading rucksacks onto the roof of an old Lada Niva outside a guesthouse at dawn"
+credit: "An early start from a guesthouse."
+image: /assets/heroes/itineraries.jpg
+parent:
+  title: Plan your trip
+  url: /plan/
+related:
+  - title: "Ready-made itineraries"
+    url: /itineraries/
+  - title: "Roads and passes this week"
+    url: /roads/
+  - title: "Getting around Irad"
+    url: /getting-around/
+  - title: "Entry checker"
+    url: /plan/entry-checker/
+---
+<section>
+  <div class="container">
+    <p class="intro">Our members plan trips like this for guests every week, so we put the sums in one place. Start with the way you're coming in, add the places in the order you'd like to see them, and change anything: the plan below updates as you go. It's worked out in your browser, and nothing you choose is sent anywhere or kept.</p>
+    <div id="trip-builder" class="trip-tool" data-src="{{ '/assets/data/trip.json' | relative_url }}">
+      <noscript><p class="notice">The trip builder needs JavaScript. Without it, our <a href="{{ '/itineraries/' | relative_url }}">itineraries</a> and the <a href="https://maps.attelkom.net/">Kartalar route planner</a> will get you most of the way.</p></noscript>
+    </div>
+    <script type="application/json" id="trip-roads">{{ site.data.roads | jsonify }}</script>
+
+    <h2>How the trip builder works</h2>
+    <ul>
+      <li><b>Roads and driving times</b> come from the road map behind <a href="https://maps.attelkom.net/">Kartalar</a>, Attelkom's map, with the Gendarmerie's checkpoints on the way. Each day links to the same route on Kartalar.</li>
+      <li><b>Passes:</b> for dates this week we use our <a href="{{ '/roads/' | relative_url }}">road report</a>; after that, the usual season. The Kök-Bel road's crossings and the Suusamyr crossing shut from 25 October to 30 April, and chains are needed on the Fergana Gateway from November to March. The Gateway also closes outright for snow on about 20 days a winter, and nobody knows which days until the week before.</li>
+      <li><b>Buses and trains</b> are the departures from Talas Central Bus Station on our <a href="{{ '/getting-around/' | relative_url }}">getting around</a> page, the daily train on the <a href="https://railways.iradgov.org/timetable.html">Irad Temir Jolu timetable</a>, city buses from the <a href="https://transport.talas.iradgov.org/">Talas City Bus Park</a> and Iradiya's flight on the <a href="https://avia.iradgov.org/schedule.html">Talas Civil Air Terminal schedule</a>.</li>
+      <li><b>Costs</b> use today's fares, fuel and food prices and the official dollar rate, as IradOne publishes them each morning, and Hotel Talas's 2026 price list. Guesthouse prices vary too much to count, so they're left out.</li>
+      <li><b>Permits:</b> the visitor rules on <a href="https://e-irad.org/services/entry/">e-Irad</a>, the rules for crossing the Qara-Chik line, and what to declare from the Customs Service's <a href="https://customs.iradgov.org/bring.html">What can I bring in?</a></li>
+    </ul>
+    {% include next-steps.html %}
+  </div>
+</section>
+<script src="{{ '/assets/trip-tools.js' | relative_url }}" defer></script>

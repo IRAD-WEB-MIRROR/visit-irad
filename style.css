@@ -353,3 +353,29 @@ ul .road-status { margin-right: 8px; }
 .road-unknown { background: #6b6460; }
 .map-link { margin: 28px 0 0; font-weight: 600; }
 .map-link a::before { content: "\2316\00a0"; }
+/* trip tools: trip builder, entry checker, room request */
+.trip-tool { margin: 0 0 36px; }
+button.btn-outline { font: inherit; font-weight: 600; background: var(--card); color: var(--crimson); cursor: pointer; padding: 6px 14px; }
+button.btn-outline[disabled] { opacity: .35; cursor: default; }
+.trip-h { margin-top: 26px; }
+.trip-stops { padding-left: 1.4em; }
+.trip-stops li { display: flex; flex-wrap: wrap; align-items: center; gap: 8px 14px; margin: 0 0 8px; }
+.trip-stops select, .trip-stops input { font: inherit; color: var(--ink); background: var(--paper); border: 1px solid var(--line); padding: 6px 8px; }
+.trip-stops select { min-width: 14em; }
+.trip-stops input { width: 4.5em; }
+.trip-row-btns { display: inline-flex; gap: 6px; }
+.trip-actions { display: flex; flex-wrap: wrap; align-items: center; gap: 10px 14px; }
+.trip-check { flex-direction: row !important; align-items: center; gap: 8px !important; text-transform: none !important; letter-spacing: 0 !important; font-size: .95rem !important; color: var(--ink) !important; }
+.trip-sum { margin: 22px 0 14px; }
+.trip-plan { list-style: none; padding-left: 0; }
+.trip-plan > li { margin: 0 0 14px; }
+.trip-plan > li p { margin: 4px 0; }
+.trip-plan .trip-stay { padding: 6px 12px; background: var(--sand); }
+.trip-plan .road-status { margin: 2px 6px 2px 0; white-space: normal; }
+.trip-opts { margin: 4px 0; }
+.trip-warn { color: var(--crimson-dark); }
+@media (prefers-color-scheme: dark) { .trip-warn { color: var(--gold); } }
+.trip-papers li { margin: 0 0 6px; }
+.trip-small { font-size: .9rem; color: var(--muted); }
+.trip-end { margin: 16px 0; }
+table.trip-costs td:last-child { text-align: right; white-space: nowrap; }
